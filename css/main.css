@@ -72,3 +72,20 @@ form button {
 .site-footer {
   padding: 2rem 0;
 }
+
+/****************************************************************************************
+                                    Skip STYLES
+*****************************************************************************************/
+/* Hide the navigation by using postition:absolute 
+and give it a negative number for the top*/
+nav.skiplinks a{
+    position:absolute;
+    top:-1000px; /*a nagative number means above the tip of the page */
+    left: 0;
+}
+
+/* using the :focus pseudo-class to make each skip link 
+show ip. Whenever the user need it. */
+nav.skiplinks a:focus{
+    top:0;
+}
