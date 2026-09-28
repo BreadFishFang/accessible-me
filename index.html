@@ -25,38 +25,61 @@
           <li><a href="#">Studio</a></li>
         </ul>
       </nav>
-      <!--An img element must have an alt attribute-->
+      <!--Images should have an alt attribute for accessibility.
+      Informative images need descriptive alt text, while decorative images can use alt="". -->
       <img src="https://placekitten.com/1200/900" class="banner" alt="random images from Picsum Photos">
     </header>
     <main class="main-content">
-      <h1>Welcome to Jam Box</h1>
+      <!--The h1 represents the main heading of the page.
+      Secondary sections use h2 elements to create a clear heading hierarchy
+      and make the page structure easier to understand for users and screen readers.-->
+      <h2>Welcome to Jam Box</h2>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
       <section class="owner">
-        <h1>Meet the owner</h1>
+        <!-- The Address heading is inside the owner section,
+        so an h3 creates a logical heading level below the h2. -->
+        <h3>Meet the owner</h3>
         <ul>
           <li>Name: John Doe</li>
           <li>Title: CEO</li>
           <li>Email: johnjoe@jambox.ca</li>
           <li>Phone: 613-000-0000</li>
         </ul>
-        <h1>Address</h1>
-        <p>
+        <h3>Address</h3>
+        <!-- The address element is used for contact information,
+        so it gives the content more meaningful semantic structure than a regular paragraph. -->
+        <address>
           Jambox Studios
           123 Guitar Road,
           Musicville, Danceistan
           B3T 0L0
-        </p>
+        </address>
       </section>
       <section class="contact-section">
-        <h1>Contact Us</h1>
+        <h3>Contact Us</h3>
         <form action="thanks.html">
-          <label>Full Name</label>
-          <input type="text" placeholder="Full Name">
-          <input type="text" placeholder="Email">
-          <input type="text" placeholder="Subject">
-          <b>Your Message</b>
-          <textarea></textarea>
+          <!-- Each form field should have a label connected to it with the "for" and "id" attributes.
+          This helps screen readers understand which label belongs to which input field. -->
+          <!-- The name attribute identifies the form field when the form data is submitted. 
+          Placeholder text can give users an example or hint,
+          but it should not replace a visible label because it disappears when the user starts typing.
+          id   = identifies the element on the page
+          name = identifies the submitted form data-->
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Full Name">
+          <!-- Using type="email" allows the browser to recognize the field as an email input
+          and can help check whether the user enters a valid email format. -->
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" placeholder="Email">
+          <!-- The label and input are connected by matching the label's "for" value
+          with the input's "id" value. -->
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Subject">
+          <!-- A label should be used instead of a bold element because the label
+          describes the purpose of the textarea and improves accessibility. -->
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message"></textarea>
           <button type="submit">Send</button>
         </form>
       </section>
