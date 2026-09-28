@@ -19,9 +19,11 @@ h6 {
   margin: 0 auto;
   padding: 0 1rem;
 }
-
+/* max-width keeps images responsive without forcing small images to become larger.
+height: auto keeps the image's original aspect ratio. */
 img {
   width: 100%;
+  height: auto;
 }
 
 .main-nav ul {
@@ -47,16 +49,17 @@ img {
 form input,
 form textarea {
   display: block;
-  width: 100%;
+  /* calc() subtracts the left and right padding from 100% width
+  so the form fields stay inside their container. */
+  width: calc(100% - 2rem);
   margin-bottom: 1rem;
   padding: .5rem 1rem;
 }
-
+/* A minimum height gives the textarea enough space for writing,
+while resize: vertical allows users to make it taller if needed. */
 form textarea {
   min-height: 150px;
-  max-height: 150px;
-  height: 150px;
-  resize: none;
+  resize: vertical;
 }
 
 form button {
