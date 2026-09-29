@@ -14,9 +14,11 @@
 
 <body>
   <!--The body need header, main, footer. -->
-  <div class="container">
+  <!-- itemscope creates a Schema.org item.
+  itemtype identifies Jam Box Studios as a LocalBusiness. --> 
+  <div class="container" itemscope itemtype="https://schema.org/LocalBusiness">
     <nav class="skiplinks">
-            <!-- skip are using a keyboard to navigate your site. -->
+            <!-- skip are using a keyboard to navigate the site. -->
             <ul>
                 <!-- "skip to" link help user go to the content what they want to check easier.-->
                 <li><a href="#mainnav">Skip to Main Navigation</a></li>
@@ -24,9 +26,13 @@
                 <li><a href="#sitefooter">Skip to Site Footer</a></li>
             </ul>
         </nav>
-    <header class="site-header">
+    <!--role="banner" identifies the main header area of the webpage 
+    for assistive technologies.-->
+    <header class="site-header" role="banner">
       <h1>Jam Box Studios</h1>
-      <nav class="main-nav">
+      <!-- role="navigation" identifies this area as the main navigation.
+      aria-label gives the navigation a clear name for screen reader users. -->
+      <nav class="main-nav" role="navigation" aria-label="Main navigation" id="mainnav">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">Products</a></li>
@@ -36,20 +42,28 @@
       </nav>
       <!--Images should have an alt attribute for accessibility.
       Informative images need descriptive alt text, while decorative images can use alt="". -->
-      <!-- I don't know why the image didn't show in the webside, But when I  -->
+      <!-- I don't know why the image didn't show in the webside, 
+       When I open this link, a random image appears, 
+       which is different each time, and the URL is also different. 
+       But it didn't work on the side.-->
       <img src="https://placekitten.com/1200/900" class="banner" alt="random images from Picsum Photos">
     </header>
-    <main class="main-content">
+    <!-- role="main" identifies the primary content area of the webpage. 
+     give id to link the skip-->
+    <main class="main-content" role="main" id="maincont">
+    
       <!--The h1 represents the main heading of the page.
       Secondary sections use h2 elements to create a clear heading hierarchy
       and make the page structure easier to understand for users and screen readers.-->
       <h2>Welcome to Jam Box</h2>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
-      <section class="owner">
+      <!-- aria-labelledby connects this section to its heading,
+      which helps screen reader users understand the purpose of the section. -->  
+      <section class="owner" role="region" aria-labelledby="owner-heading">
         <!-- The Address heading is inside the owner section,
         so an h3 creates a logical heading level below the h2. -->
-        <h3>Meet the owner</h3>
+        <h3 id="owner-heading">Meet the owner</h3>
         <ul>
           <li>Name: John Doe</li>
           <li>Title: CEO</li>
@@ -66,9 +80,13 @@
           B3T 0L0
         </address>
       </section>
-      <section class="contact-section">
-        <h3>Contact Us</h3>
-        <form action="thanks.html">
+      <!-- role="region" identifies this as an important section.
+      aria-labelledby uses the heading to give the section an accessible name. -->
+      <section class="contact-section" role="region" aria-labelledby="contact-heading">
+        <h3 id="contact-heading">Contact Us</h3>
+        <!-- role="form" identifies this area as a form.
+        aria-labelledby connects the form to the Contact Us heading. -->
+        <form action="thanks.html" role="form" aria-labelledby="contact-heading">
           <!-- Each form field should have a label connected to it with the "for" and "id" attributes.
           This helps screen readers understand which label belongs to which input field. -->
           <!-- The name attribute identifies the form field when the form data is submitted. 
@@ -94,7 +112,9 @@
         </form>
       </section>
     </main>
-    <footer class="site-footer">
+    <!-- role="contentinfo" identifies the footer as information 
+     about the webpage or website. -->
+    <footer class="site-footer" role="contentinfo" id="sitefooter">
       &copy; 2021 Jam Box Studios
     </footer>
   </div>

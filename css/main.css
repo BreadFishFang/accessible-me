@@ -83,6 +83,10 @@ nav.skiplinks a{
     top:-1000px; /*a nagative number means above the tip of the page */
     left: 0;
 }
+/* remove the point in the list. */
+ul{
+  list-style-type: none;
+}
 
 /* using the :focus pseudo-class to make each skip link 
 show ip. Whenever the user need it. */
