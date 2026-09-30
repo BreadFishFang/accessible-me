@@ -29,7 +29,8 @@
     <!--role="banner" identifies the main header area of the webpage 
     for assistive technologies.-->
     <header class="site-header" role="banner">
-      <h1>Jam Box Studios</h1>
+      <!-- itemprop="name" identifies this text as the name of the LocalBusiness. -->
+      <h1 itemprop="name">Jam Box Studios</h1>
       <!-- role="navigation" identifies this area as the main navigation.
       aria-label gives the navigation a clear name for screen reader users. -->
       <nav class="main-nav" role="navigation" aria-label="Main navigation" id="mainnav">
@@ -64,20 +65,29 @@
         <!-- The Address heading is inside the owner section,
         so an h3 creates a logical heading level below the h2. -->
         <h3 id="owner-heading">Meet the owner</h3>
-        <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
-        </ul>
+        <!-- This creates a Person Schema for the owner and identifies
+        the person's name, job title, email, and telephone number. -->
+        <div itemprop="employee" itemscope itemtype="https://schema.org/Person">
+          <ul>
+            <li>Name: <span itemprop="name">John Doe</span></li>
+            <li>Title: <span itemprop="jobTitle">CEO</span></li>
+            <li>Email: <span itemprop="email">johnjoe@jambox.ca</span></li>
+            <li>Phone: <span itemprop="telephone">613-000-0000</span></li>
+          </ul>
+        </div>
         <h3>Address</h3>
         <!-- The address element is used for contact information,
-        so it gives the content more meaningful semantic structure than a regular paragraph. -->
-        <address>
-          Jambox Studios
-          123 Guitar Road,
-          Musicville, Danceistan
-          B3T 0L0
+        so it gives the content more meaningful semantic structure 
+        than a regular paragraph. -->
+        <!-- PostalAddress Schema describes the business address.
+        Each itemprop identifies a specific part of the address,
+        such as the street, city, region, and postal code. -->
+        <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">>
+          <span itemprop="name">Jam Box Studios</span>
+          <span itemprop="streetAddress">123 Guitar Road,</span>
+          <span itemprop="addressLocality">Musicville</span>
+          <span itemprop="addressRegion">,Danceistan</span>
+          <span itemprop="postalCode">B3T 0L0</span>
         </address>
       </section>
       <!-- role="region" identifies this as an important section.
